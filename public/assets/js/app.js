@@ -10,4 +10,9 @@ $(function(){
             location.reload();
         });
     });
+
+    $(".devourBtn").on("click", e => {
+        e.preventDefault();
+        
+    });
 });
