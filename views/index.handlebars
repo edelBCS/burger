@@ -1,0 +1,8 @@
+{{#each burgers}}
+    <p>Name: {{this.burger_name}}</p>
+    {{#if this.devoured}}
+        <p>Devoured: TRUE</p>
+    {{else}}
+        <p>Devoured: FALSE</p>
+    {{/if}}
+{{/each}}
