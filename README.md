@@ -12,6 +12,7 @@ This setup assumes that you have a running MySQL Database running locally on you
 ```npm i```
 * start server
 ```npm run dev```
+* rename .env.example file and full-in missing info
 
 ## Add a Burger
 To add a burger, enter a name and click the ```Add Burger``` button.  This will add it to the table below to allow it to be devoured.
