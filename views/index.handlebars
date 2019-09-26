@@ -3,7 +3,7 @@
         <label for="burgerAddName"><h2>Add Burger to be Devoured</h2></label>
         <input type="text" class="form-control" id="burgerAddName" placeholder="New Burger Name">
     </div>
-    <button id="burgerAddBtn" type="submit" class="btn btn-primary"><i class="fas fa-hamburger"></i> Add Burger</button>
+    <button id="burgerAddBtn" type="submit" class="btn btn-danger"><i class="fas fa-hamburger"></i> Add Burger</button>
 </form>
 
 <br><hr><br>
@@ -27,7 +27,7 @@
                 <td>{{this.burger_name}}</td>
                 <td>FALSE</td>
                 <td>
-                    <button class="btn btn-primary devourBtn" data-id="{{this.id}}"><i class="fas fa-utensils"></i> Devour IT!!</button>
+                    <button class="btn btn-danger devourBtn" data-id="{{this.id}}"><i class="fas fa-utensils"></i> Devour IT!!</button>
                 </td>
             </tr>
             {{/unless}}
