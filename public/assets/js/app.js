@@ -11,8 +11,21 @@ $(function(){
         });
     });
 
-    $(".devourBtn").on("click", e => {
-        e.preventDefault();
-        
+    $(".devourBtn").click(e => {
+        //e.preventDefault();
+        var id = $(e.currentTarget).data("id");
+        console.log(id)
+        $.ajax("/api/update/" + id, 
+            {
+                type: "PUT",
+                data: {
+                    col: "devoured",
+                    val: 1
+                }            
+            }
+        ).then(function(){
+            console.log("Burger ID" + id + " has been devoured!");
+            location.reload();
+        });
     });
 });

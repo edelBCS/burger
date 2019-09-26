@@ -1,3 +1,12 @@
+<form>
+    <div class="form-group">
+        <label for="burgerAddName">New Burger Name</label>
+        <input type="text" class="form-control" id="burgerAddName">
+    </div>
+    <button id="burgerAddBtn" type="submit" class="btn btn-primary">Add Burger</button>
+</form>
+<br><hr><br>
+<h2 class="h2">Burgers that need to be eaten...</h2>
 <table class="table">
     <thead>
         <tr>
@@ -9,7 +18,7 @@
     </thead>
     <tbody>
         {{#each burgers}}
-            <tr>
+            {{!-- <tr>
                 <td>{{this.id}}</td>
                 <td>{{this.burger_name}}</td>
                 {{#if this.devoured}}
@@ -20,15 +29,52 @@
                 <td>
                     <button class="btn btn-primary devourBtn" data-id="{{this.id}}">Devour Burger</button>
                 </td>
+            </tr> --}}
+            {{#unless this.devoured}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.burger_name}}</td>
+                <td>FALSE</td>
+                <td>
+                    <button class="btn btn-primary devourBtn" data-id="{{this.id}}">Devour Burger</button>
+                </td>
             </tr>
+            {{/unless}}
+        {{/each}}
+    </tbody>
+</table>
+<br>
+<h2 class="h2">Burgers that have been devoured!!</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Burger Name</th>
+            <th scope="col">Devoured</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each burgers}}
+            {{!-- <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.burger_name}}</td>
+                {{#if this.devoured}}
+                    <td>TRUE</td>
+                {{else}}
+                    <td>FALSE</td>
+                {{/if}}
+                <td>
+                    <button class="btn btn-primary devourBtn" data-id="{{this.id}}">Devour Burger</button>
+                </td>
+            </tr> --}}
+            {{#if this.devoured}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.burger_name}}</td>
+                <td>TRUE</td>
+            </tr>
+            {{/if}}
         {{/each}}
     </tbody>
 </table>
 
-<form>
-    <div class="form-group">
-        <label for="burgerAddName">New Burger Name</label>
-        <input type="text" class="form-control" id="burgerAddName">
-    </div>
-    <button id="burgerAddBtn" type="submit" class="btn btn-primary">Add Burger</button>
-</form>

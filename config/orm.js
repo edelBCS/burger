@@ -12,7 +12,7 @@ var orm = {
         connection.query(queryStr, [cols, name], cb);
     },
     updateOne: function(tableName, col, val, id, cb){
-        var queryStr = `UPDATE ${tableName} SET ${col} = '${val} WHERE id = ${id}`;
+        var queryStr = `UPDATE ${tableName} SET ${col} = '${val}' WHERE id = '${id}'`;
         console.log(queryStr);
         connection.query(queryStr, cb);
     }

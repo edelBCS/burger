@@ -14,19 +14,19 @@ router.post("/api/add/:name", (req, res) => {
     burger.insertOne(req.params.name, (err, data) => {
         if(err) throw err;
         console.log("Added Burger: " + data);
-        res.redirect("/");
+        res.sendStatus(200);
     });
 });
 
-router.put("/api/update/:id/:name", (req, res) => {
-    var col = ""; //column that needs to be changed
-    var val = ""; //new val of that col
+router.put("/api/update/:id", (req, res) => {
+    var col = req.body.col //column that needs to be changed
+    var val = req.body.val //new val of that col
     var id = req.params.id;
 
     burger.updateOne(col, val, id, (err, data) => {
         if(err) throw err;
         console.log("Update Burger: ID" + req.params.id);
-        res.redirect("/");
+        res.sendStatus(200);
     });
 });
 
