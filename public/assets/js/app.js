@@ -11,9 +11,8 @@ $(function(){
         });
     });
 
-    $(".devourBtn").click(e => {
-        //e.preventDefault();
-        var id = $(e.currentTarget).data("id");
+    $(document).on("click", ".devourBtn", function() {
+        var id = $(this).attr("data-id");
         console.log(id)
         $.ajax("/api/update/" + id, 
             {
